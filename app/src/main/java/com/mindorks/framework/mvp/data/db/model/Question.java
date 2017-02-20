@@ -103,6 +103,14 @@ public class Question {
         this.questionText = questionText;
     }
 
+    public String getImgUrl() {
+        return this.imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -118,6 +126,8 @@ public class Question {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+
 
     /**
      * To-many relationship, resolved on first access (and after reset).
@@ -185,19 +195,10 @@ public class Question {
         myDao.update(this);
     }
 
-    public String getImgUrl() {
-        return this.imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
-    }
-
     /** called by internal mechanisms, do not call yourself. */
     @Generated(hash = 754833738)
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getQuestionDao() : null;
     }
-    
 }
